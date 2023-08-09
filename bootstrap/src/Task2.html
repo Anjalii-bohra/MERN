@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      <title>Task 3_2</title>
+      <style>
+        .header {
+          background-color: rgb(0, 183, 255);
+          padding: 20px;
+          display: flex;
+          justify-content: center;
+        }
+    
+        .subheader {
+          background-color: rgb(153, 151, 151);
+          padding: 10px;
+          display: flex;
+          justify-content: space-between;
+        }
+    
+        .subheader-links {
+          display: flex;
+          justify-content: flex-start;
+        }
+    
+        .subheader-right {
+          display: flex;
+          justify-content: flex-end;
+        }
+    
+        .subheader-links a,
+        .subheader-right a {
+          text-decoration: none;
+          color: white;
+          margin: 0 10px;
+        }
+    
+        .content {
+          display: flex;
+          height: calc(100vh - 60px);
+        }
+    
+        .left-container {
+          background-color: white;
+          width: 80vw;
+          padding: 20px;
+          display: flex;
+          justify-content: center;
+        }
+    
+        .right-container {
+          background-color: rgb(88, 88, 88);
+          flex-grow: 1;
+          padding: 20px;
+          color: white;
+          display: flex;
+          justify-content: center;
+        }
+
+        .subheader-links {
+          margin-right: 20px;
+        }
+
+        .subheader-right {
+          margin-left: 20px;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="header">
+        <h3>Ethnus Layout</h3>
+      </div>
+      
+      <div class="subheader">
+        <div class="subheader-links">
+          <a href="#">Home</a>
+          <a href="#">Menu</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </div>
+        <div class="subheader-right">
+          <a href="#">Sign Up</a>
+          <a href="#">Log In</a>
+        </div>
+      </div>
+      
+      <div class="content">
+        <div class="left-container">
+          <p>Write your content here</p>
+        </div>
+        <div class="right-container">
+          <p>This is</p>
+        </div>
+      </div>
+    
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+</html>

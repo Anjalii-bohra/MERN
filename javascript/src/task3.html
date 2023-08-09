@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .form-input {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .form-input label {
+      margin-right: 5px;
+    }
+
+    .form-input input, .form-input textarea {
+      border: 2px solid red;
+      padding: 5px;
+    }
+
+    .form-input .error-message {
+      color: red;
+      margin-left: 5px;
+    }
+  </style>
+  <script>
+    function validateForm() {
+      var nameInput = document.getElementById('name');
+      var emailInput = document.getElementById('email');
+      var websiteInput = document.getElementById('website');
+      var messageInput = document.getElementById('message');
+      
+      var isValid = true;
+
+      if (nameInput.value === '') {
+        nameInput.style.border = '2px solid red';
+        nameInput.nextElementSibling.textContent = 'This field is required';
+        isValid = false;
+      } else {
+        nameInput.style.border = '2px solid initial';
+        nameInput.nextElementSibling.textContent = '';
+      }
+
+      if (emailInput.value === '') {
+        emailInput.style.border = '2px solid red';
+        emailInput.nextElementSibling.textContent = 'A valid email address is required';
+        isValid = false;
+      } else {
+        var emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if (!emailRegex.test(emailInput.value)) {
+          emailInput.style.border = '2px solid red';
+          emailInput.nextElementSibling.textContent = 'A valid email address is required';
+          isValid = false;
+        } else {
+          emailInput.style.border = '2px solid initial';
+          emailInput.nextElementSibling.textContent = '';
+        }
+      }
+
+      if (websiteInput.value === '') {
+        websiteInput.style.border = '2px solid red';
+        websiteInput.nextElementSibling.textContent = 'A valid URL is required';
+        isValid = false;
+      } else {
+        var websiteRegex = /^(ftp|http|https):\/\/[^ "]+$/;
+        if (!websiteRegex.test(websiteInput.value)) {
+          websiteInput.style.border = '2px solid red';
+          websiteInput.nextElementSibling.textContent = 'A valid URL is required';
+          isValid = false;
+        } else {
+          websiteInput.style.border = '2px solid initial';
+          websiteInput.nextElementSibling.textContent = '';
+        }
+      }
+
+      if (messageInput.value === '') {
+        messageInput.style.border = '2px solid red';
+        messageInput.nextElementSibling.textContent = 'This field is required';
+        isValid = false;
+      } else {
+        messageInput.style.border = '2px solid initial';
+        messageInput.nextElementSibling.textContent = '';
+      }
+
+      if (isValid) {
+        // Form is valid, perform further actions
+        console.log('Form submitted successfully!');
+        // Add your code here to handle form submission or validation success
+      }
+    }
+  </script>
+</head>
+<body>
+  <form onsubmit="event.preventDefault(); validateForm();">
+    <div class="form-input">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" >
+      <span class="error-message"></span>
+    </div>
+
+    <div class="form-input">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" >
+      <span class="error-message"></span>
+    </div>
+
+    <div class="form-input">
+      <label for="website">Website:</label>
+      <input type="text" id="website" name="website" >
+      <span class="error-message"></span>
+    </div>
+
+    <div class="form-input">
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="4"></textarea>
+      <span class="error-message"></span>
+    </div>
+
+    <button type="submit">Submit</button>_
+  </form>
+</body>
+</html>

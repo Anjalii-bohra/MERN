@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+            border: 4px solid darkgreen;
+            border-top: none;
+            padding: 10px;
+            height: 40vh;
+        }
+        
+        .column {
+            flex-basis: 33.33%;
+            border-right: 1px solid black;
+        }
+        
+        .column:last-child {
+            border-right: none;
+        }
+        
+        .row {
+            padding: 5px;
+        }
+        
+        .row:not(:last-child) {
+            border-bottom: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="column">
+            <div class="row">
+                <h1>Frame 1</h1>
+                <p>Contents of frame 1</p>
+            </div>
+            <div class="row">
+                <h1>Frame 2</h1>
+                <p>Contents of frame 2</p>
+            </div>
+        </div>
+        <div class="column">
+            <div class="row">
+                <h1>Frame 3</h1>
+                <p>Contents of frame 3</p>
+            </div>
+        </div>
+        <div class="column">
+            <div class="row">
+                <h1>Frame 4</h1>
+                <p>Contents of frame 4</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
